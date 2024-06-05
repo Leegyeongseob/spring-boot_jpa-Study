@@ -4,6 +4,7 @@ package com.kh.TotalEx.entity;
 import com.kh.TotalEx.constant.ItemSellStatus;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
