@@ -13,7 +13,7 @@ public interface ItemRepository extends JpaRepository<Item,Long> {
     List<Item> findByItemNumOrItemDetail(String itemNum, String itemDetail);
     List<Item> findByPriceLessThan(Integer price);
     List<Item> findByPriceLessThanOrderByPriceDesc(Integer price);
-    //검색
+    //JPQL 검색
     @Query("select i from Item i where i.itemDetail like %:itemDetail% order by i.price desc")
     List<Item> findByItemDetail(@Param("itemDetail") String itemDetail);
     // nativeQuery 검색

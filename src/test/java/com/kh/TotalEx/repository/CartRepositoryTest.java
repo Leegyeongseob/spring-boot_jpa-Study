@@ -34,7 +34,7 @@ public class CartRepositoryTest {
     public Member createMemberInfo(){
         Member member = new Member();
         member.setEmail("can3487@naver.com");
-        member.setPassword("1q2w3e4r!@");
+        member.setPwd("1q2w3e4r!@");
         member.setName("곰돌이사육사");
         member.setRegDate(LocalDateTime.now());
         return member;

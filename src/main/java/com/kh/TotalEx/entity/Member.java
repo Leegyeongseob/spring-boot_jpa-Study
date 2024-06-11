@@ -1,4 +1,5 @@
 package com.kh.TotalEx.entity;
+import com.kh.TotalEx.constant.Authority;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String password;
+    private String pwd;
 
     @Column(unique = true)
     private String email;
@@ -24,4 +25,15 @@ public class Member {
     private String image;
     private LocalDateTime regDate;
 
+    @Enumerated(EnumType.STRING)
+    private Authority authority;
+    @Builder
+    public Member(String name,String email,String pwd,String image,Authority authority) {
+        this.name = name;
+        this.pwd = pwd;
+        this.email = email;
+        this.image = image;
+        this.authority = authority;
+        this.regDate = LocalDateTime.now();
+    }
 }
