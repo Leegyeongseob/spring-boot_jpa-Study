@@ -11,6 +11,8 @@ import java.util.Date;
 @Setter
 @ToString
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class Member {
     @Id
     @Column(name="member_id")
@@ -27,13 +29,4 @@ public class Member {
 
     @Enumerated(EnumType.STRING)
     private Authority authority;
-    @Builder
-    public Member(String name,String email,String pwd,String image,Authority authority) {
-        this.name = name;
-        this.pwd = pwd;
-        this.email = email;
-        this.image = image;
-        this.authority = authority;
-        this.regDate = LocalDateTime.now();
-    }
 }

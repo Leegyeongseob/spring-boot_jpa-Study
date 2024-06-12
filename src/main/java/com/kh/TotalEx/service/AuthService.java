@@ -46,21 +46,5 @@ public class AuthService {
 
         return tokenProvider.generateTokenDto(authentication);
     }
-    // 회원 전체 조회
-    public List<MemberResDto> getMemberList() {
-        List<Member> members = memberRepository.findAll();
-        List<MemberResDto> memberDtos = new ArrayList<>();
-        for(Member member : members) {
-            memberDtos.add(convertEntityToDto(member));
-        }
-        return memberDtos;
-    }
-    // 회원 엔티티를 회원 DTO로 변환
-    private MemberResDto convertEntityToDto(Member member) {
-        return MemberResDto.builder().email(member.getEmail())
-                .name(member.getName())
-                .regData(member.getRegDate())
-                .image(member.getImage())
-                .build();
-    }
+
 }
